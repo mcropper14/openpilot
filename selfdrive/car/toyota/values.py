@@ -252,6 +252,7 @@ CAR_INFO: Dict[str, Union[ToyotaCarInfo, List[ToyotaCarInfo]]] = {
       (Ecu.telematics, 0x750, 0xC7): [
           b'\x01N210jj333300\x00\x00\x00\x00',
       ]
+  }
 }
 
 # (addr, cars, bus, 1/freq*100, vl)
