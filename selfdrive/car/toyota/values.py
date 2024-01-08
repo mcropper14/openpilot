@@ -220,7 +220,7 @@ CAR_INFO: Dict[str, Union[ToyotaCarInfo, List[ToyotaCarInfo]]] = {
   ],
 
   #added my car fingerprint from this doc: https://github.com/commaai/openpilot/wiki/Fingerprinting
-  CAR.RAV4_TSS2_2023 {
+  CAR.RAV4_TSS2_2023: {
       (Ecu.srs, 0x780, None): [
           b'8917F0R233\x00\x00\x00\x00\x00\x00',
           b'8917F0R233\x00\x00\x00\x00\x00\x00',
