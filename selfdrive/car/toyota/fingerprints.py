@@ -1135,6 +1135,39 @@ FW_VERSIONS = {
   },
   CAR.RAV4_TSS2_2023: {
 
+      (Ecu.srs, 0x780, None): [
+            b'8917F0R233\x00\x00\x00\x00\x00\x00',
+            b'8917F0R233\x00\x00\x00\x00\x00\x00',
+        ],
+        (Ecu.hvac, 0x7C4, None): [
+            b'8865F4215001    ',
+        ],
+        (Ecu.abs, 0x7B0, None): [
+            b'\x01F152642F1000\x00\x00\x00\x00',
+        ],
+        (Ecu.engine, 0x700, None): [
+            b'\x01896634AE1001\x00\x00\x00\x00',
+        ],
+        (Ecu.eps, 0x7B1, None): [
+            b'\x028965B0R11000\x00\x00\x00\x008965B0R12000\x00\x00\x00\x00',
+        ],
+        (Ecu.combinationMeter, 0x7C0, None): [
+            b'\x03838004AB5103\x00\x00\x00\x00838004AB5202\x00\x00\x00\x00838004AB5302\x00\x00\x00\x00',
+        ],
+        (Ecu.fwdRadar, 0x750, 0x0F): [
+            b'\x018821F0R03100\x00\x00\x00\x00',
+        ],
+        (Ecu.fwdCamera, 0x750, 0x6D): [
+            b'\x028646F0R05100\x00\x00\x00\x008646G0R02100\x00\x00\x00\x00',
+        ],
+        (Ecu.gateway, 0x750, 0x5F): [
+            b'8911F1201201    ',
+        ],
+        (Ecu.telematics, 0x750, 0xC7): [
+            b'\x01N210jj333300\x00\x00\x00\x00',
+        ]
+    ],
+
     """
     (Ecu.abs, 0x7b0, None): [
       b'\x01F15260R450\x00\x00\x00\x00\x00\x00',
