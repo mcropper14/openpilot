@@ -180,8 +180,39 @@ CAR_INFO: Dict[str, Union[ToyotaCarInfo, List[ToyotaCarInfo]]] = {
     ToyotaCarInfo("Toyota RAV4 Hybrid 2022", video_link="https://youtu.be/U0nH9cnrFB0"),
   ],
   CAR.RAV4_TSS2_2023: [
-    ToyotaCarInfo("Toyota RAV4 2023"),
-    ToyotaCarInfo("Toyota RAV4 Hybrid 2023-24"),
+    #ToyotaCarInfo("Toyota RAV4 2023"),
+    #ToyotaCarInfo("Toyota RAV4 Hybrid 2023-24"),
+    (Ecu.srs, 0x780, None): [
+          b'8917F0R233\x00\x00\x00\x00\x00\x00',
+          b'8917F0R233\x00\x00\x00\x00\x00\x00',
+      ],
+      (Ecu.hvac, 0x7C4, None): [
+          b'8865F4215001    ',
+      ],
+      (Ecu.abs, 0x7B0, None): [
+          b'\x01F152642F1000\x00\x00\x00\x00',
+      ],
+      (Ecu.engine, 0x700, None): [
+          b'\x01896634AE1001\x00\x00\x00\x00',
+      ],
+      (Ecu.eps, 0x7B1, None): [
+          b'\x028965B0R11000\x00\x00\x00\x008965B0R12000\x00\x00\x00\x00',
+      ],
+      (Ecu.combinationMeter, 0x7C0, None): [
+          b'\x03838004AB5103\x00\x00\x00\x00838004AB5202\x00\x00\x00\x00838004AB5302\x00\x00\x00\x00',
+      ],
+      (Ecu.fwdRadar, 0x750, 0x0F): [
+          b'\x018821F0R03100\x00\x00\x00\x00',
+      ],
+      (Ecu.fwdCamera, 0x750, 0x6D): [
+          b'\x028646F0R05100\x00\x00\x00\x008646G0R02100\x00\x00\x00\x00',
+      ],
+      (Ecu.gateway, 0x750, 0x5F): [
+          b'8911F1201201    ',
+      ],
+      (Ecu.telematics, 0x750, 0xC7): [
+          b'\x01N210jj333300\x00\x00\x00\x00',
+      ]
   ],
   CAR.MIRAI: ToyotaCarInfo("Toyota Mirai 2021"),
   CAR.SIENNA: ToyotaCarInfo("Toyota Sienna 2018-20", video_link="https://www.youtube.com/watch?v=q1UPOo4Sh68", min_enable_speed=MIN_ACC_SPEED),
@@ -219,40 +250,7 @@ CAR_INFO: Dict[str, Union[ToyotaCarInfo, List[ToyotaCarInfo]]] = {
     ToyotaCarInfo("Lexus RX Hybrid 2020-22"),
   ],
 
-  #added my car fingerprint from this doc: https://github.com/commaai/openpilot/wiki/Fingerprinting
-  CAR.RAV4_TSS2_2023: {
-      (Ecu.srs, 0x780, None): [
-          b'8917F0R233\x00\x00\x00\x00\x00\x00',
-          b'8917F0R233\x00\x00\x00\x00\x00\x00',
-      ],
-      (Ecu.hvac, 0x7C4, None): [
-          b'8865F4215001    ',
-      ],
-      (Ecu.abs, 0x7B0, None): [
-          b'\x01F152642F1000\x00\x00\x00\x00',
-      ],
-      (Ecu.engine, 0x700, None): [
-          b'\x01896634AE1001\x00\x00\x00\x00',
-      ],
-      (Ecu.eps, 0x7B1, None): [
-          b'\x028965B0R11000\x00\x00\x00\x008965B0R12000\x00\x00\x00\x00',
-      ],
-      (Ecu.combinationMeter, 0x7C0, None): [
-          b'\x03838004AB5103\x00\x00\x00\x00838004AB5202\x00\x00\x00\x00838004AB5302\x00\x00\x00\x00',
-      ],
-      (Ecu.fwdRadar, 0x750, 0x0F): [
-          b'\x018821F0R03100\x00\x00\x00\x00',
-      ],
-      (Ecu.fwdCamera, 0x750, 0x6D): [
-          b'\x028646F0R05100\x00\x00\x00\x008646G0R02100\x00\x00\x00\x00',
-      ],
-      (Ecu.gateway, 0x750, 0x5F): [
-          b'8911F1201201    ',
-      ],
-      (Ecu.telematics, 0x750, 0xC7): [
-          b'\x01N210jj333300\x00\x00\x00\x00',
-      ]
-  }
+
 }
 
 # (addr, cars, bus, 1/freq*100, vl)
