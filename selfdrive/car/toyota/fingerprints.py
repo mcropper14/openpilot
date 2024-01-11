@@ -1165,8 +1165,8 @@ FW_VERSIONS = {
         ],
         (Ecu.telematics, 0x750, 0xC7): [
             b'\x01N210jj333300\x00\x00\x00\x00',
-        ]
-    ],
+        
+        ],
 
     """
     (Ecu.abs, 0x7b0, None): [
