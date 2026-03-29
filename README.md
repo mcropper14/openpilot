@@ -37,6 +37,23 @@ Quick start: `bash <(curl -fsSL openpilot.comma.ai)`
   </tr>
 </table>
 
+# Hackathon Project 
+
+Modular integration of [Alpamayo 1.5](https://github.com/NVlabs/alpamayo1.5), a vision-language action driving model, into the [openpilot](https://github.com/commaai/openpilot) stack with an fpga for fusion acceleration
+
+## Architecture
+```
+Camera / Replay Frames
+        ↓
+   alpamayod  (Python daemon, 10 Hz)
+        ↓
+   [ VLM | FPGA | DSP ]
+        ↓
+ modelV2 (trajectory) flow-matching diffusion model + alpamayoDebug (vision language action model) (reasoning)
+        ↓
+       openpilot
+```
+
 ## Running alpamayo 
 
 clone: ``` https://github.com/NVlabs/alpamayo1.5/tree/main ``` 
