@@ -1,0 +1,17 @@
+Import('env', 'arch', 'messaging')
+import os
+
+# alpamayo_bridge: quantized encoder+denoiser via SNPE DSP, publishes modelV2
+# Only built on-device (larch64) when the Qualcomm SNPE SDK is available.
+snpe_root = os.environ.get('SNPE', '')
+if arch == 'larch64' and snpe_root and os.path.isdir(snpe_root):
+    lenv = env.Clone()
+    lenv.Append(CPPPATH=[
+        os.path.join(snpe_root, 'include', 'SNPE'),
+        Dir('#msgq_repo').abspath,
+    ])
+    lenv.Append(LIBPATH=[os.path.join(snpe_root, 'lib', 'aarch64-linux-gcc')])
+    lenv.Append(LIBS=['SNPE', 'yuv'])
+    lenv.Program('alpamayo_bridge',
+                 ['alpamayo_bridge.cc', 'denoiser.cc'],
+                 LIBS=['SNPE', 'yuv'] + messaging + ['pthread'])
