@@ -49,7 +49,6 @@ _services: dict[str, tuple] = {
   "carControl": (True, 100., 10),
   "carOutput": (True, 100., 10),
   "longitudinalPlan": (True, 20., 10),
-  "lateralManeuverPlan": (True, 20.),
   "driverAssistance": (True, 20., 20),
   "procLog": (True, 0.5, 15, QueueSize.BIG),
   "gpsLocationExternal": (True, 10., 10),
@@ -92,6 +91,7 @@ _services: dict[str, tuple] = {
 
   # debug
   "uiDebug": (True, 0., 1),
+  "alpamayoDebug": (True, 10., 1),
   "testJoystick": (True, 0.),
   "alertDebug": (True, 20., 5),
   "livestreamWideRoadEncodeIdx": (False, 20.),
