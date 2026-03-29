@@ -37,6 +37,36 @@ Quick start: `bash <(curl -fsSL openpilot.comma.ai)`
   </tr>
 </table>
 
+## Running alpamayo 
+
+clone: ``` https://github.com/NVlabs/alpamayo1.5/tree/main ``` 
+
+Follow install instructions. 
+
+Ssh into AWS instance. 
+
+cd into ``` alpamayo1.5/src/alpamayo1_5 ```
+
+cd into openpilot ``` alpamayo1.5/src/alpamayo1_5 ``` 
+
+Start the alpamayo server: ``` python -m uvicorn alpamayo_server:app --host 127.0.0.1 --port 8084 ``` 
+
+Start the alpamayod component: ``` python3 -m selfdrive.alpamayod.alpamayod ``` 
+
+Start remote desktop session: ``` sudo dcv create-session mysession --type=virtual --owner ubuntu ```
+
+Verify that session has started: ``` dcv list-sessions ```
+
+
+Log onto AWS desktop
+
+``` cd openpilot ``` 
+
+```  tools/replay/replay --demo ``` 
+
+```  tools/replay/replay --demo ```
+
+
 
 Using openpilot in a car
 ------
